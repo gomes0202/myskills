@@ -70,11 +70,12 @@ export default function Home() {
       <FlatList
         data={mySkills}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => {
-          <SkillCard skill={item.name}
+        renderItem={({ item }) =>
+          <SkillCard
+            skill={item.name}
             onPress={() => hadleRemoveSkill(item.id)}
           />
-        }}
+        }
       />
 
     </View>
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: '#1F1E25',
     color: '#FFF',
-    fontSize: '18',
+    fontSize: 18,
     padding: Platform.OS == 'ios' ? 15 : 10,
     marginTop: 30,
     borderRadius: 7
